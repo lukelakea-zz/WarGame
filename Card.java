@@ -1,3 +1,6 @@
+//Written by Jackie Horton adapted by Luke Lakea
+//CS110
+
 /**
  * Representation of a single playing card (from a standard 52 card deck). 
  * A card consists of a suit value and a rank value.  Once instantiated, the

@@ -1,3 +1,7 @@
+//Written by Jackie Horton adapted by Luke Lakea
+//CS110
+//Class that simulates a deck
+
 import java.util.Random;
 public class Deck 
 {
@@ -7,17 +11,23 @@ public class Deck
    Card [] deck;
    int ct;
 	
-	
+	/**
+      Default constructor that creates a new deck with 52 card objects
+   */
    public Deck()
    {
       freshDeck();
    }
-	
+	/**
+      Method for checking if the deck is empty 
+   */
 	public Deck(boolean isEmpty)
 	{
 		deck = new Card[EMPTY_DECK];
 	}
-	
+	/**
+      Method that creates 52 card objects in an array list
+   */
    public void freshDeck()
    {
       deck = new Card[CARDS_IN_DECK];
@@ -29,21 +39,25 @@ public class Deck
             ct = ct + 1;
          }
       }
-     
-   
    }
+   /**
+      Method that deals one card
+   */
    public Card dealCard()
    {
       ct--;
       return deck[ct];
    }
-	
-	
-	
+	/**
+      Gives an integer value of the number of cards remaining
+   */
    public int cardsRemaining()
    {  
       return ct;
    }
+   /**
+      Randomizes the cards in an existing deck
+   */
    public void shuffle()
    {
       int randNum;
@@ -57,16 +71,21 @@ public class Deck
          deck[randNum]=temp;
       }
    }
+   /**
+      Checks if there are no cards remaining
+   */
    public boolean isEmpty()
    {
       return (cardsRemaining() == 0);
    }
+   /**
+      Demonstration of the deck
+   */
    public static void main(String [] args) 
    {
       Deck deck = new Deck();
       deck.shuffle();
       int i = 0;
-//      while (deck.cardsRemaining() > 0)
       while (!(deck.isEmpty()))
          System.out.println((i++)+1 + " : " + deck.dealCard().toString());
       deck.freshDeck();
